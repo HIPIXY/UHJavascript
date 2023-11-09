@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenis Seragam</title>
+</head>
+
+<body>
+    <h1>Cek Jenis Seragam</h1>
+
+    <script>
+        var hariIni = new Date().getDay();
+
+        var jenisSeragam;
+
+        switch (hariIni) {
+            case 1:
+                jenisSeragam = "Kemeja putih bawahan biru";
+                break;
+            case 2:
+                jenisSeragam = "Seragam identitas";
+                break;
+            case 3:
+                jenisSeragam = "Kemeja batik bawahan hitam";
+                break;
+            case 4:
+                jenisSeragam = "Kemeja praktek bawahan hitam";
+                break;
+            case 5:
+                jenisSeragam = "Seragam pramuka";
+                break;
+            case 6:
+                jenisSeragam = "Bebas/libur";
+                break;
+            case 0:
+                jenisSeragam = "Bebas/libur";
+                break;
+            default:
+                jenisSeragam = "Tidak ada informasi seragam untuk hari ini";
+        }
+
+        console.log("Hari ini (" + getNamaHari(hariIni) + "): " + jenisSeragam);
+
+        function getNamaHari(index) {
+            var namaHari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            return namaHari[index];
+        }
+    </script>
+</body>
+
+</html>

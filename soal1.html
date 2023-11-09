@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Keliling Jajar Genjang</title>
+    <link rel="stylesheet" href="soal1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+<body>
+    <h2>Menghitung Keliling Jajar Genjang</h2>
+
+    <label for="panjangSisiA">Panjang Sisi A: </label>
+    <input type="number" id="panjangSisiA"><br>
+
+    <label for="panjangSisiB">Panjang Sisi B: </label>
+    <input type="number" id="panjangSisiB"><br>
+
+    <button onclick="hitungKeliling()">Hitung Keliling</button>
+
+    <p>Hasil Keliling: <span id="hasilKeliling"></span></p>
+
+    <script>
+        function hitungKeliling() {
+            var panjangSisiA = parseFloat(document.getElementById('panjangSisiA').value);
+            var panjangSisiB = parseFloat(document.getElementById('panjangSisiB').value);
+
+            if (isNaN(panjangSisiA) || isNaN(panjangSisiB)) {
+                alert("Masukkan angka valid untuk panjang sisi A dan sisi B.");
+            } else {
+                var keliling = 2 * (panjangSisiA + panjangSisiB);
+                document.getElementById('hasilKeliling').textContent = keliling;
+            }
+        }
+    </script>
+</body>
+</html>

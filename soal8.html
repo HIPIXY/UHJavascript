@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenis Smartphone</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Popins', sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 14px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Jenis Smartphone</h2>
+        <input type="text" id="inputText" placeholder="Masukkan spesifikasi smartphone">
+        <button onclick="cekSpesifikasi()">Cek</button>
+        <div id="hasil"></div>
+    </div>
+
+    <script>
+        function cekSpesifikasi() {
+            var spesifikasi = document.getElementById("inputText").value.toLowerCase();
+            var hasil = document.getElementById("hasil");
+
+            if (spesifikasi.includes("10mp")) {
+                hasil.innerText = "Kamera";
+            } else if (spesifikasi.includes("128gb")) {
+                hasil.innerText = "Memori";
+            } else {
+                hasil.innerText = "Spesifikasi tidak dikenali";
+            }
+        }
+    </script>
+</body>
+
+</html>

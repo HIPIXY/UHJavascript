@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suara Hewan</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pilih Hewan</h1>
+    <select id="hewan">
+        <option value="anjing">Anjing</option>
+        <option value="kucing">Kucing</option>
+        <option value="burung">Burung</option>
+        <option value="lumba">Lumba lumba</option>
+    </select>
+
+    <button onclick="playSound()">Putar Suara</button>
+
+    <script>
+        function playSound() {
+            var selectedHewan = document.getElementById("hewan").value;
+            var audio = new Audio();
+
+            switch (selectedHewan) {
+                case "anjing":
+                    audio.src = "suara_anjing.mp3";
+                    break;
+                case "kucing":
+                    audio.src = "suara_kucing.mp3";
+                    break;
+                case "burung":
+                    audio.src = "suara_burung.mp3";
+                    break;
+                case "lumba":
+                    audio.src = "lumba_lumba.mp3";
+                    break;
+                default:
+                    alert("Pilihan hewan tidak valid");
+                    return;
+            }
+
+            audio.play();
+        }
+    </script>
+</body>
+
+</html>
